@@ -1,0 +1,41 @@
+{%extends 'layout.html' %}
+{% block body %}
+<div class="login-page">
+  <div class="form">
+    <form class="register-form">
+      <input type="text" placeholder="name"/>
+      <input type="text" placeholder="name"/>
+      <input type="text" placeholder="name"/>
+      <button>create</button>
+      <p class="message">Already registered?<a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form">
+        <p>1. What do you prefer,brandname(B) or price(P)?</p>
+      <input type="radio" name="prefer" value="Brandname" checked>Brandname
+  <input type="radio" name="prefer" value="Price">Price<br>
+       <p>2. Does number of reviews matter to you,yes(Y) or no(N)?</p>
+        <label>
+        <input type="radio" name="prefer" value="Yes" checked>Y
+        <input type="radio" name="prefer" value="No" checked>N
+        </label>
+        <p>3. What is the minimum rating you consider when you purchase a product?</p>
+          <p>Select Rating</p>
+        <select name="rating" class="form-control">
+            <option disabled selected> --Rating--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+          <br>
+        <br>
+<br>
+        <button>Create proflie</button>
+
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
