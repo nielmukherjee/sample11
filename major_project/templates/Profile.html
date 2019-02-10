@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-10 offset-1 ">
+            {% if pref %}
+                <h3>Your preferences</h3>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Prefers</h5>
+                            <small>Brand or Price</small>
+                        </div>
+                        <p class="mb-1">{{pref[1]}}</p>
+                        <small>paragraph footer</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Prefers</h5>
+                            <small>customer reviews or not</small>
+                        </div>
+                        <p class="mb-1">{{pref[2]}}</p>
+                        <small>paragraph footer</small>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start disabled">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Minimum selected rating</h5>
+                            <small>1 to 5</small>
+                        </div>
+                        <p class="mb-1">{{pref[3]}}</p>
+                        <small>paragraph footer</small>
+                    </a>
+                </div>
+            {% else %}
+                            <form method="post" class="card m-1">
+                    <div class="card-header">
+                        <h3>Please tell us your preferences</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="login-form">
+                            <div class="form-group">
+                                <h5>1. What do you prefer,brandname(B) or price(P)?</h5>
+                                <label>
+                                    <input type="radio" name="prefer" value="Brandname" checked>
+                                    Brandname
+                                </label>
+                                <label>
+                                    <input type="radio" name="prefer" value="Price">
+                                    Price
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <h5>2. Does number of reviews matter to you,yes(Y) or no(N)?</h5>
+                                <label>
+                                    <input type="radio" name="review" value="Yes" checked>Y
+                                </label>
+                                <label>
+                                    <input type="radio" name="review" value="No" checked>N
+                                </label>
+
+                            </div>
+                            <div class="form-group">
+                                <h5>3. What is the minimum rating you consider when you purchase a product?</h5>
+                                <label>
+                                    Select Rating
+                                </label>
+                                <select name="rating" class="form-control">
+                                    <option disabled selected> --Rating--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button>Save you preferences</button>
+                    </div>
+                </form>
+
+            {% endif%}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

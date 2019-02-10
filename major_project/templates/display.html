@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+    <div class="container-fluid ">
+        <div class="row">
+            <section class="col-2 bg-info">
+                <ul class="list-group m-1">
+                    {% for file in data %}
+                        <li class="list-group-item">
+                            <a href="/display?filename={{ file }}">{{ file }} </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            <section class="col">
+                {% if details %}
+                    {{ details|safe }}
+                {% else %}
+                    <h4>Please select a scraped file to view the content</h4>
+                {% endif %}
+            </section>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script>
+        $('table').addClass('table table-bordered m-1 table-striped')
+    </script>
+{% endblock js %}
